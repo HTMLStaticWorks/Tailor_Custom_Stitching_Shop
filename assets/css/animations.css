@@ -1,0 +1,74 @@
+/* ==========================================================================
+   ATELIER BESPOKE — ANIMATION UTILITIES
+   Tailor & Custom Stitching Shop Template
+   ========================================================================== */
+
+/* Fade Up Reveal Baseline */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image Zoom Hover */
+.img-zoom-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  position: relative;
+}
+
+.img-zoom-wrapper img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-zoom-wrapper:hover img {
+  transform: scale(1.06);
+}
+
+/* Gallery Reveal Frame */
+.gallery-reveal {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-reveal.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Smooth Shimmer Hover Accent */
+.hover-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: rotate(30deg) translateY(-100%);
+  transition: transform 0.8s ease;
+}
+
+.hover-shimmer:hover::after {
+  transform: rotate(30deg) translateY(100%);
+}

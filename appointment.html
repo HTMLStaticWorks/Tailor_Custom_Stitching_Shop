@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book Measurement & Fitting Appointment — Reserve an in-studio consultation or private home fitting with master tailors.">
+  <meta name="keywords" content="tailor appointment booking, custom suit measurement booking, home fitting tailor, alteration consultation">
+  <title>Book Fitting Appointment | Atelier Bespoke</title>
+
+  <!-- Google Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-xl navbar-tailor">
+    <div class="container">
+      <a class="navbar-brand-logo" href="index.html">
+        <i class="bi bi-scissors color-accent"></i> Atelier Bespoke
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-menu navbar-nav mx-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu dropdown-menu-tailor">
+              <li><a class="dropdown-item" href="index.html">Home 1 — Editorial Bespoke</a></li>
+              <li><a class="dropdown-item" href="home-2.html">Home 2 — Atelier Studio</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="alterations.html">Alterations</a></li>
+          <li class="nav-item"><a class="nav-link" href="fabric-collection.html">Fabrics</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="appointment.html">Appointment</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light Dark Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle RTL Layout" title="Switch to RTL Layout">RTL</button>
+          <a href="signup.html" class="btn btn-sm btn-tailor-outline">Sign Up</a>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner Header -->
+  <section class="py-5 bg-main border-bottom">
+    <div class="container py-4 text-center">
+      <span class="section-subtitle">Personalized Experience</span>
+      <h1 class="display-4 fw-bold">Schedule Your Fitting Session</h1>
+      <p class="lead max-w-700 mx-auto text-secondary">Reserve a private measurement consultation at our atelier studio or request a discrete home fitting session with our senior master cutter.</p>
+    </div>
+  </section>
+
+  <!-- Appointment Booking Form Area -->
+  <section class="py-5 bg-surface">
+    <div class="container py-4">
+      <div class="row g-5 justify-content-center">
+        <div class="col-lg-8 fade-up">
+          
+          <!-- Success Notification Alert -->
+          <div class="alert alert-success d-none p-4 mb-4 rounded-3 shadow-sm" id="appointmentSuccessAlert" role="alert">
+            <h4 class="alert-heading fw-bold"><i class="bi bi-check-circle-fill me-2"></i>Fitting Appointment Request Received!</h4>
+            <p class="mb-0">Thank you for scheduling your consultation with Atelier Bespoke. Our master tailor will review your preferences and send a confirmation call/email within 4 hours.</p>
+          </div>
+
+          <div class="glass-card p-4 p-md-5">
+            <form id="appointmentBookingForm">
+              
+              <h4 class="fw-bold mb-4 border-bottom pb-2 color-accent">1. Personal & Contact Details</h4>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Full Name *</label>
+                  <input type="text" class="form-control-tailor" placeholder="e.g. Lord Alexander Vance" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Email Address *</label>
+                  <input type="email" class="form-control-tailor" placeholder="alexander@domain.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Phone / WhatsApp Number *</label>
+                  <input type="tel" class="form-control-tailor" placeholder="+1 (555) 019-2834" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Client Type</label>
+                  <select class="form-select-tailor">
+                    <option selected>First-Time Patron</option>
+                    <option>Existing Atelier Client (Profile on File)</option>
+                    <option>Wedding Group / Corporate Fleet</option>
+                  </select>
+                </div>
+              </div>
+
+              <h4 class="fw-bold mb-4 border-bottom pb-2 color-accent">2. Tailoring & Garment Preferences</h4>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Primary Tailoring Service *</label>
+                  <select class="form-select-tailor" required>
+                    <option selected value="">Select Service Required...</option>
+                    <option>Men's 2-Piece or 3-Piece Bespoke Suit</option>
+                    <option>Men's Formal Tuxedo Ensemble</option>
+                    <option>Women's Custom Suit & Blazer</option>
+                    <option>Bridal Wedding Gown Fitting / Alteration</option>
+                    <option>Garment Alteration & Repair</option>
+                    <option>Fabric Swatch & Styling Consultation</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Fitting Session Location *</label>
+                  <select class="form-select-tailor" required>
+                    <option selected>Main Atelier Studio (Flagship Showroom)</option>
+                    <option>Private Residence / Hotel Fitting Service</option>
+                    <option>Corporate Office On-Site Fitting</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Preferred Fitting Date *</label>
+                  <input type="date" class="form-control-tailor" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Preferred Time Slot *</label>
+                  <select class="form-select-tailor" required>
+                    <option selected>Morning (10:00 AM - 01:00 PM)</option>
+                    <option>Afternoon (02:00 PM - 05:00 PM)</option>
+                    <option>Evening Private Slot (06:00 PM - 08:00 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <h4 class="fw-bold mb-4 border-bottom pb-2 color-accent">3. Garment Details & Special Instructions</h4>
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Specific Style Requirements / Body Measurement Notes</label>
+                <textarea class="form-control-tailor" rows="4" placeholder="Mention fabric preferences, event dates, specific posture concerns, or fit requirements..."></textarea>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                <label class="form-check-label small text-secondary" for="termsCheck">
+                  I agree to the Atelier appointment terms and confirm that fitting session appointments can be rescheduled up to 24 hours prior.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-tailor-gold btn-lg w-100"><i class="bi bi-calendar-check-fill me-2"></i>Confirm Appointment Request</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar Guidance Area -->
+        <div class="col-lg-4 fade-up">
+          <div class="glass-card p-4 mb-4">
+            <h4 class="fw-bold mb-3 color-accent"><i class="bi bi-info-circle me-2"></i>What to Expect</h4>
+            <ul class="list-unstyled small text-secondary mb-0">
+              <li class="mb-3"><strong class="text-primary">1. Consultation (30 mins):</strong> Style review, silhouette choice, and fabric swatch selection.</li>
+              <li class="mb-3"><strong class="text-primary">2. Measurement (20 mins):</strong> 35 precise anatomical measurements taken by a senior cutter.</li>
+              <li class="mb-0"><strong class="text-primary">3. Pattern Crafting:</strong> A personal paper pattern is drafted exclusively for your body shape.</li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-4">
+            <h4 class="fw-bold mb-3"><i class="bi bi-telephone-outbound me-2"></i>Need Immediate Assistance?</h4>
+            <p class="small text-secondary">For urgent event appointments or wedding parties, contact our concierge directly:</p>
+            <p class="fw-bold mb-1"><i class="bi bi-phone me-2 color-accent"></i>+1 (555) 019-2834</p>
+            <p class="fw-bold"><i class="bi bi-envelope me-2 color-accent"></i>concierge@atelierbespoke.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="footer-tailor">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand-logo mb-3" href="index.html">
+            <i class="bi bi-scissors color-accent"></i> Atelier Bespoke
+          </a>
+          <p class="small text-secondary">Master bespoke tailoring studio specializing in handcrafted suits, women's custom couture, bridal alterations, and premium textile curations.</p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="services.html">Bespoke Suiting</a></li>
+            <li><a href="services.html">Women's Couture</a></li>
+            <li><a href="alterations.html">Garment Alterations</a></li>
+            <li><a href="services.html">Bridal & Tuxedos</a></li>
+            <li><a href="services.html">Corporate Uniforms</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Customer Care</h5>
+          <ul class="footer-links">
+            <li><a href="appointment.html">Book Fitting Session</a></li>
+            <li><a href="fabric-collection.html">Fabric Collection</a></li>
+            <li><a href="about.html">Our Atelier Story</a></li>
+            <li><a href="blog.html">Style Journal</a></li>
+            <li><a href="contact.html">Contact & Directions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Sartorial Newsletter</h5>
+          <p class="small text-secondary">Receive curated seasonal suiting advice, luxury fabric alerts, and private event invitations.</p>
+          <form id="newsletterForm" class="mt-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-tailor" placeholder="Your email address" required>
+              <button class="btn btn-tailor-gold" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-top pt-3 d-flex flex-wrap justify-content-between align-items-center small text-secondary">
+        <p class="mb-0">&copy; 2026 Atelier Bespoke Tailors. All Rights Reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-secondary">Privacy Policy</a>
+          <a href="#" class="text-secondary">Terms of Fitting</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/15550192834" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/theme-toggle.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
