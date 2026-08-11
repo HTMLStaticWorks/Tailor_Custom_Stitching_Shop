@@ -129,4 +129,29 @@ document.addEventListener('DOMContentLoaded', () => {
       newsletterForm.reset();
     });
   }
+
+  // 6. Back to Top Button Logic
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.id = 'backToTopBtn';
+  backToTopBtn.className = 'back-to-top';
+  backToTopBtn.setAttribute('aria-label', 'Back to top');
+  backToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+  document.body.appendChild(backToTopBtn);
+
+  const toggleBackToTop = () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  };
+
+  window.addEventListener('scroll', toggleBackToTop);
+  
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 });
