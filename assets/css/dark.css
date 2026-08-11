@@ -131,9 +131,17 @@ body.dark-theme .accordion-button {
   color: #F8FAFC;
 }
 
+body.dark-theme .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
 body.dark-theme .accordion-button:not(.collapsed) {
   background-color: #1E293B;
   color: #D4AF37;
+}
+
+body.dark-theme .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23D4AF37'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 }
 
 body.dark-theme .footer-tailor {
@@ -165,3 +173,92 @@ body.dark-theme .social-icon-btn:hover {
   color: #020617;
   border-color: #D4AF37;
 }
+
+body.dark-theme .stats-section {
+  background-color: var(--surface-subtle);
+}
+
+body.dark-theme .split-hero h1,
+body.dark-theme .split-hero h6,
+body.dark-theme .split-hero .display-4 {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .split-hero p,
+body.dark-theme .split-hero .lead,
+body.dark-theme .split-hero .text-muted,
+body.dark-theme .split-hero small {
+  color: var(--text-secondary) !important;
+}
+
+body.dark-theme .hero-glass-badge {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-theme .split-hero .hero-glass-badge h6,
+body.dark-theme .split-hero .hero-glass-badge small,
+body.dark-theme .split-hero .hero-glass-badge .text-muted {
+  color: #000000 !important;
+}
+
+body.dark-theme .text-muted {
+  color: var(--secondary) !important;
+}
+
+body.dark-theme .text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+body.dark-theme .form-select,
+body.dark-theme .form-select-tailor {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23f8fafc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 1.15rem center !important;
+  background-size: 16px 12px !important;
+}
+
+body.dark-theme .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-theme .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28248, 250, 252, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+body.dark-theme .table,
+body.dark-theme .table > :not(caption) > * > * {
+  --bs-table-bg: transparent !important;
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .table th,
+body.dark-theme .table td {
+  color: var(--text-primary) !important;
+}
+
+body.dark-theme .table tr.border-bottom,
+body.dark-theme .table tr,
+body.dark-theme .table td {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-theme .fabric-filter-btn.active {
+  background-color: #D4AF37 !important;
+  border-color: #D4AF37 !important;
+  color: #020617 !important;
+}
+
+body.dark-theme input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) !important;
+  cursor: pointer;
+}
+
+/* RTL Dark Mode Form Select Override */
+html[dir="rtl"] body.dark-theme .form-select,
+html[dir="rtl"] body.dark-theme .form-select-tailor {
+  background-position: left 1.15rem center !important;
+}
+
+

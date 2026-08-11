@@ -22,16 +22,16 @@
 
 <body class="d-flex flex-column min-vh-100 bg-main justify-content-center align-items-center py-4">
 
-  <!-- Floating Utility Controls -->
-  <div class="position-absolute top-0 end-0 p-3 d-flex gap-2">
-    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light Dark Theme">
-      <i class="bi bi-moon-stars-fill"></i>
-    </button>
-    <button class="rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle RTL Layout"
-      title="Switch to RTL Layout">RTL</button>
-  </div>
-
   <div class="container my-auto">
+    <!-- Floating Utility Controls -->
+    <div class="position-absolute top-0 end-0 p-3 d-flex gap-2 auth-utility-controls">
+      <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light Dark Theme">
+        <i class="bi bi-moon-stars-fill"></i>
+      </button>
+      <button class="rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle RTL Layout"
+        title="Switch to RTL Layout">RTL</button>
+    </div>
+
     <!-- Centered Brand Logo at Top -->
     <div class="text-center mb-4">
       <a class="navbar-brand-logo justify-content-center" href="index.html">
@@ -47,6 +47,42 @@
             <i class="bi bi-person-circle color-accent fs-1"></i>
             <h2 class="fw-bold mt-2 h3">Client Sign In</h2>
             <p class="small text-secondary mb-0">Access your fitting records & suit measurements.</p>
+          </div>
+
+          <form
+            onsubmit="event.preventDefault(); alert('Signed in successfully! (UI Only)'); window.location.href='index.html';">
+            <div class="mb-3">
+              <label class="form-label fw-semibold small">Email Address</label>
+              <input type="email" class="form-control-tailor" placeholder="alexander@domain.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold small">Password</label>
+              <div class="position-relative">
+                <input type="password" id="loginPassword" class="form-control-tailor pe-5" placeholder="••••••••" required>
+                <button type="button" class="position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent pe-3 text-secondary" id="togglePasswordBtn" onclick="togglePasswordVisibility('loginPassword', 'togglePasswordIcon')" style="z-index: 10;">
+                  <i class="bi bi-eye" id="togglePasswordIcon"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check mb-0">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label small text-secondary" for="rememberMe">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="small text-muted">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-tailor-gold btn-lg w-100 mb-3">Sign In to Account</button>
+          </form>
+
+          <div class="d-flex align-items-center my-3">
+            <div class="border-bottom w-100"></div>
+            <span class="px-2 small text-secondary text-nowrap">or sign in with</span>
+            <div class="border-bottom w-100"></div>
           </div>
 
           <!-- Social Login Buttons (Google & Apple) -->
@@ -73,37 +109,6 @@
             </button>
           </div>
 
-          <div class="d-flex align-items-center my-3">
-            <div class="border-bottom w-100"></div>
-            <span class="px-2 small text-secondary text-nowrap">or sign in with email</span>
-            <div class="border-bottom w-100"></div>
-          </div>
-
-          <form
-            onsubmit="event.preventDefault(); alert('Signed in successfully! (UI Only)'); window.location.href='index.html';">
-            <div class="mb-3">
-              <label class="form-label fw-semibold small">Email Address</label>
-              <input type="email" class="form-control-tailor" placeholder="alexander@domain.com" required>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label fw-semibold small">Password</label>
-              <input type="password" class="form-control-tailor" placeholder="••••••••" required>
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div class="form-check mb-0">
-                <input class="form-check-input" type="checkbox" id="rememberMe">
-                <label class="form-check-label small text-secondary" for="rememberMe">
-                  Remember me
-                </label>
-              </div>
-              <a href="#" class="small text-muted">Forgot password?</a>
-            </div>
-
-            <button type="submit" class="btn btn-tailor-gold btn-lg w-100 mb-3">Sign In to Account</button>
-          </form>
-
           <div class="text-center mt-4 pt-3 border-top">
             <p class="small text-secondary mb-0">Don't have an account? <a href="signup.html"
                 class="fw-bold color-accent">Register Here</a></p>
@@ -121,6 +126,23 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/theme-toggle.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    function togglePasswordVisibility(inputId, iconId) {
+      const passwordInput = document.getElementById(inputId);
+      const toggleIcon = document.getElementById(iconId);
+      if (passwordInput && toggleIcon) {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          toggleIcon.classList.remove('bi-eye');
+          toggleIcon.classList.add('bi-eye-slash');
+        } else {
+          passwordInput.type = 'password';
+          toggleIcon.classList.remove('bi-eye-slash');
+          toggleIcon.classList.add('bi-eye');
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

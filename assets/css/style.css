@@ -49,6 +49,14 @@ html {
   font-size: 16px;
 }
 
+.bg-main {
+  background-color: var(--bg-main) !important;
+}
+
+.bg-surface {
+  background-color: var(--surface) !important;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -327,6 +335,12 @@ a:hover {
 
 .btn-tailor-outline:hover {
   background-color: var(--primary);
+  color: #FFFFFF !important;
+}
+
+.fabric-filter-btn.active {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
   color: #FFFFFF !important;
 }
 
@@ -613,8 +627,7 @@ a:hover {
 }
 
 /* Form Styles */
-.form-control-tailor,
-.form-select-tailor {
+.form-control-tailor {
   width: 100%;
   padding: 0.85rem 1.15rem;
   background-color: var(--surface);
@@ -623,6 +636,24 @@ a:hover {
   color: var(--text-primary);
   font-family: var(--font-body);
   transition: var(--transition);
+}
+
+.form-select-tailor {
+  width: 100%;
+  padding: 0.85rem 2.75rem 0.85rem 1.15rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231F2937' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1.15rem center;
+  background-size: 16px 12px;
 }
 
 .form-control-tailor:focus,
@@ -657,12 +688,21 @@ a:hover {
 }
 
 /* Counter Card */
+.stats-section {
+  background-color: var(--primary);
+}
+
 .stat-number {
   font-family: var(--font-accent);
   font-weight: 550;
   font-size: 2.75rem;
   color: var(--accent);
   line-height: 1;
+}
+
+/* Fix for team member portraits that are cropped badly */
+img[src*="master-tailor.jpg"] {
+  object-position: top;
 }
 
 /* Accordion FAQ Styling */
@@ -712,6 +752,30 @@ a:hover {
   border-radius: var(--radius-sm);
 }
 
+.philosophy-img-wrapper {
+  height: 380px;
+}
+
+@media (max-width: 768px) {
+  .philosophy-img-wrapper {
+    height: 280px;
+  }
+
+  /* Force all buttons across all pages to remain on a single line on mobile */
+  .btn, .btn-lg {
+    white-space: nowrap !important;
+    font-size: 0.85rem !important;
+    padding: 0.65rem 1rem !important;
+  }
+
+  /* Fabrics page filter/tab buttons text size reduction and single-line wrap */
+  .fabric-filter-btn {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 1rem !important;
+    white-space: nowrap !important;
+  }
+}
+
 /* ==========================================================================
    RTL LAYOUT SUPPORT RULES (html[dir="rtl"])
    ========================================================================== */
@@ -723,6 +787,17 @@ html[dir="rtl"] {
 html[dir="rtl"] body {
   direction: rtl;
   text-align: right;
+}
+
+html[dir="rtl"] ol,
+html[dir="rtl"] ul {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+html[dir="rtl"] .list-unstyled {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 html[dir="rtl"] .me-1, html[dir="rtl"] .me-2, html[dir="rtl"] .me-3, html[dir="rtl"] .me-4 {
@@ -773,4 +848,50 @@ html[dir="rtl"] .border-start {
   border-end-style: none !important;
   border-right: 4px solid var(--accent) !important;
   border-left: none !important;
+}
+
+html[dir="rtl"] .dropdown-toggle::after {
+  margin-left: 0 !important;
+  margin-right: 0.255em !important;
+}
+
+html[dir="rtl"] .form-select,
+html[dir="rtl"] .form-select-tailor {
+  background-position: left 1.15rem center !important;
+  padding-left: 2.75rem !important;
+  padding-right: 1.15rem !important;
+}
+
+html[dir="rtl"] .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+html[dir="rtl"] .form-check {
+  padding-right: 1.5em !important;
+  padding-left: 0 !important;
+}
+
+html[dir="rtl"] .form-check-input {
+  float: right !important;
+  margin-right: -1.5em !important;
+  margin-left: 0 !important;
+}
+
+@media (max-width: 767.98px) {
+  .auth-utility-controls {
+    position: static !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+  }
+
+  /* Force authentication page card buttons to remain on a single line on mobile */
+  .glass-card .btn {
+    white-space: nowrap !important;
+    font-size: 0.9rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
 }
