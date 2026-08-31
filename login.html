@@ -20,7 +20,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
 
-<body class="d-flex flex-column min-vh-100 bg-main justify-content-center align-items-center py-4">
+<body class="bg-main auth-page-body">
 
   <div class="container my-auto">
     <!-- Floating Utility Controls -->
@@ -33,31 +33,35 @@
     </div>
 
     <!-- Centered Brand Logo at Top -->
-    <div class="text-center mb-4">
+    <div class="text-center mb-3">
       <a class="navbar-brand-logo justify-content-center" href="index.html">
-        <i class="bi bi-scissors color-accent"></i> Atelier Bespoke
+        <svg class="accent-needle color-accent me-1" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+          <path d="M 11 26 L 21 6" stroke-width="2.5" />
+          <ellipse cx="19.5" cy="9" rx="0.6" ry="1.8" transform="rotate(27 19.5 9)" fill="currentColor"/>
+          <path d="M 19.5 9 C 25 10, 27 18, 23 22 C 18 26, 12 24, 10 20 C 8 16, 11 12, 16 12 C 21 12, 24 16, 25 21" stroke-width="1.8"/>
+        </svg> Atelier Bespoke
       </a>
     </div>
 
     <!-- Centered Login Box -->
     <div class="row justify-content-center">
-      <div class="col-11 col-sm-9 col-md-7 col-lg-5 col-xl-4">
-        <div class="glass-card p-4 p-md-5">
-          <div class="text-center mb-4">
-            <i class="bi bi-person-circle color-accent fs-1"></i>
-            <h2 class="fw-bold mt-2 h3">Client Sign In</h2>
+      <div class="col-11 col-sm-9 col-md-7 col-lg-5 col-xl-4 auth-card-wrapper">
+        <div class="glass-card p-3 p-md-4">
+          <div class="text-center mb-3">
+            <i class="bi bi-person-circle color-accent fs-2"></i>
+            <h2 class="fw-bold mt-1 h4">Client Sign In</h2>
             <p class="small text-secondary mb-0">Access your fitting records & suit measurements.</p>
           </div>
 
           <form
             onsubmit="event.preventDefault(); alert('Signed in successfully! (UI Only)'); window.location.href='index.html';">
-            <div class="mb-3">
-              <label class="form-label fw-semibold small">Email Address</label>
+            <div class="mb-2">
+              <label class="form-label fw-semibold small mb-1">Email Address</label>
               <input type="email" class="form-control-tailor" placeholder="alexander@domain.com" required>
             </div>
 
-            <div class="mb-3">
-              <label class="form-label fw-semibold small">Password</label>
+            <div class="mb-2">
+              <label class="form-label fw-semibold small mb-1">Password</label>
               <div class="position-relative">
                 <input type="password" id="loginPassword" class="form-control-tailor pe-5" placeholder="••••••••" required>
                 <button type="button" class="position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent pe-3 text-secondary" id="togglePasswordBtn" onclick="togglePasswordVisibility('loginPassword', 'togglePasswordIcon')" style="z-index: 10;">
@@ -66,7 +70,7 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3 mt-1">
               <div class="form-check mb-0">
                 <input class="form-check-input" type="checkbox" id="rememberMe">
                 <label class="form-check-label small text-secondary" for="rememberMe">
@@ -76,17 +80,17 @@
               <a href="#" class="small text-muted">Forgot password?</a>
             </div>
 
-            <button type="submit" class="btn btn-tailor-gold btn-lg w-100 mb-3">Sign In to Account</button>
+            <button type="submit" class="btn btn-tailor-gold w-100 mb-2 py-2">Sign In to Account</button>
           </form>
 
-          <div class="d-flex align-items-center my-3">
+          <div class="d-flex align-items-center my-2">
             <div class="border-bottom w-100"></div>
             <span class="px-2 small text-secondary text-nowrap">or sign in with</span>
             <div class="border-bottom w-100"></div>
           </div>
 
           <!-- Social Login Buttons (Google & Apple) -->
-          <div class="d-flex gap-2 mb-3">
+          <div class="d-flex gap-2 mb-2">
             <button type="button" onclick="alert('Google Sign-In (UI Only)');"
               class="btn btn-tailor-outline w-50 d-inline-flex align-items-center justify-content-center gap-2 py-2">
               <svg width="18" height="18" viewBox="0 0 24 24">
@@ -109,13 +113,13 @@
             </button>
           </div>
 
-          <div class="text-center mt-4 pt-3 border-top">
+          <div class="text-center mt-3 pt-2 border-top">
             <p class="small text-secondary mb-0">Don't have an account? <a href="signup.html"
                 class="fw-bold color-accent">Register Here</a></p>
           </div>
         </div>
 
-        <div class="text-center mt-3">
+        <div class="text-center mt-2">
           <a href="index.html" class="small text-secondary"><i class="bi bi-arrow-left me-1"></i>Return to Homepage</a>
         </div>
       </div>

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 </head>
-<body class="d-flex flex-column min-vh-100 bg-main justify-content-center align-items-center py-4">
+<body class="bg-main auth-page-body">
 
   <div class="container my-auto">
     <!-- Floating Utility Controls -->
@@ -29,42 +29,46 @@
     </div>
 
     <!-- Centered Brand Logo at Top -->
-    <div class="text-center mb-4">
+    <div class="text-center mb-3">
       <a class="navbar-brand-logo justify-content-center" href="index.html">
-        <i class="bi bi-scissors color-accent"></i> Atelier Bespoke
+        <svg class="accent-needle color-accent me-1" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;">
+          <path d="M 11 26 L 21 6" stroke-width="2.5" />
+          <ellipse cx="19.5" cy="9" rx="0.6" ry="1.8" transform="rotate(27 19.5 9)" fill="currentColor"/>
+          <path d="M 19.5 9 C 25 10, 27 18, 23 22 C 18 26, 12 24, 10 20 C 8 16, 11 12, 16 12 C 21 12, 24 16, 25 21" stroke-width="1.8"/>
+        </svg> Atelier Bespoke
       </a>
     </div>
 
     <!-- Centered Signup Box -->
     <div class="row justify-content-center">
-      <div class="col-11 col-sm-9 col-md-8 col-lg-6 col-xl-5">
-        <div class="glass-card p-4 p-md-5">
-          <div class="text-center mb-4">
-            <i class="bi bi-person-plus color-accent fs-1"></i>
-            <h2 class="fw-bold mt-2 h3">Create Account</h2>
+      <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5 auth-card-wrapper-wide">
+        <div class="glass-card p-3 p-md-4">
+          <div class="text-center mb-3">
+            <i class="bi bi-person-plus color-accent fs-2"></i>
+            <h2 class="fw-bold mt-1 h4">Create Account</h2>
             <p class="small text-secondary mb-0">Register your profile for custom measurement records.</p>
           </div>
 
           <form onsubmit="event.preventDefault(); alert('Account registered successfully! (UI Only)'); window.location.href='login.html';">
-            <div class="row g-3">
-              <div class="col-12">
-                <label class="form-label fw-semibold small">First Name *</label>
+            <div class="row g-2">
+              <div class="col-6">
+                <label class="form-label fw-semibold small mb-1">First Name *</label>
                 <input type="text" class="form-control-tailor" placeholder="Alexander" required>
               </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold small">Last Name *</label>
+              <div class="col-6">
+                <label class="form-label fw-semibold small mb-1">Last Name *</label>
                 <input type="text" class="form-control-tailor" placeholder="Vance" required>
               </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold small">Email Address *</label>
+              <div class="col-12 col-md-6">
+                <label class="form-label fw-semibold small mb-1">Email Address *</label>
                 <input type="email" class="form-control-tailor" placeholder="alexander@domain.com" required>
               </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold small">Phone / WhatsApp *</label>
+              <div class="col-12 col-md-6">
+                <label class="form-label fw-semibold small mb-1">Phone / WhatsApp *</label>
                 <input type="tel" class="form-control-tailor" placeholder="+1 (555) 019-2834" required>
               </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold small">Password *</label>
+              <div class="col-6">
+                <label class="form-label fw-semibold small mb-1">Password *</label>
                 <div class="position-relative">
                   <input type="password" id="signupPassword" class="form-control-tailor pe-5" placeholder="••••••••" required>
                   <button type="button" class="position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent pe-3 text-secondary" id="toggleSignupPasswordBtn" onclick="togglePasswordVisibility('signupPassword', 'toggleSignupPasswordIcon')" style="z-index: 10;">
@@ -72,8 +76,8 @@
                   </button>
                 </div>
               </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold small">Confirm Password *</label>
+              <div class="col-6">
+                <label class="form-label fw-semibold small mb-1">Confirm Password *</label>
                 <div class="position-relative">
                   <input type="password" id="signupConfirmPassword" class="form-control-tailor pe-5" placeholder="••••••••" required>
                   <button type="button" class="position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent pe-3 text-secondary" id="toggleSignupConfirmPasswordBtn" onclick="togglePasswordVisibility('signupConfirmPassword', 'toggleSignupConfirmPasswordIcon')" style="z-index: 10;">
@@ -83,24 +87,24 @@
               </div>
             </div>
 
-            <div class="form-check my-3">
+            <div class="form-check my-2">
               <input class="form-check-input" type="checkbox" id="termsSignup" required>
               <label class="form-check-label small text-secondary" for="termsSignup">
                 I agree to the <a href="#" class="color-accent">Terms of Service</a> and <a href="#" class="color-accent">Privacy Policy</a>.
               </label>
             </div>
 
-            <button type="submit" class="btn btn-tailor-gold btn-lg w-100 mb-3">Complete Registration</button>
+            <button type="submit" class="btn btn-tailor-gold w-100 mb-2 py-2">Complete Registration</button>
           </form>
 
-          <div class="d-flex align-items-center my-3">
+          <div class="d-flex align-items-center my-2">
             <div class="border-bottom w-100"></div>
             <span class="px-2 small text-secondary text-nowrap">or register with</span>
             <div class="border-bottom w-100"></div>
           </div>
 
           <!-- Social Signup Buttons (Google & Apple) -->
-          <div class="d-flex gap-2 mb-3">
+          <div class="d-flex gap-2 mb-2">
             <button type="button" onclick="alert('Google Sign-Up (UI Only)');" class="btn btn-tailor-outline w-50 d-inline-flex align-items-center justify-content-center gap-2 py-2">
               <svg width="18" height="18" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -117,12 +121,12 @@
             </button>
           </div>
 
-          <div class="text-center mt-3 pt-3 border-top">
+          <div class="text-center mt-2 pt-2 border-top">
             <p class="small text-secondary mb-0">Already registered? <a href="login.html" class="fw-bold color-accent">Sign In Here</a></p>
           </div>
         </div>
 
-        <div class="text-center mt-3">
+        <div class="text-center mt-2">
           <a href="index.html" class="small text-secondary"><i class="bi bi-arrow-left me-1"></i>Return to Homepage</a>
         </div>
       </div>

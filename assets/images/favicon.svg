@@ -1,3 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="32" height="32">
-  <path fill="#B68D40" d="M3.5 3.5c-.614-.884-.074-1.962.858-2.5L8 7.226 11.642 1c.932.538 1.472 1.616.858 2.5L8.81 8.61l1.556 2.661a2.5 2.5 0 1 1-.794.637L8 9.773l-1.572 2.135a2.5 2.5 0 1 1-.794-.637L7.19 8.61zm2.5 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm7 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- The Needle (slanted left leg) -->
+  <path d="M 11 26 L 21 6" stroke="#B68D40" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Needle eye (filled) -->
+  <ellipse cx="19.5" cy="9" rx="0.6" ry="1.8" transform="rotate(27 19.5 9)" fill="#B68D40"/>
+  <!-- The Thread forming an elegant 'A' loop -->
+  <path d="M 19.5 9 C 25 10, 27 18, 23 22 C 18 26, 12 24, 10 20 C 8 16, 11 12, 16 12 C 21 12, 24 16, 25 21" stroke="#B68D40" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

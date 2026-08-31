@@ -333,6 +333,15 @@ a:hover {
   transition: var(--transition);
 }
 
+.btn-sm.btn-tailor-outline,
+.btn-sm.btn-tailor-gold {
+  padding: 0.45rem 1.25rem;
+  font-size: 0.825rem;
+  font-family: var(--font-accent);
+  font-weight: 550;
+  letter-spacing: 0.02em;
+}
+
 .btn-tailor-outline:hover {
   background-color: var(--primary);
   color: #FFFFFF !important;
@@ -430,6 +439,7 @@ a:hover {
   font-size: 3.75rem;
   line-height: 1.15;
   margin-bottom: 1.5rem;
+  text-wrap: balance;
 }
 
 .hero-content p {
@@ -964,4 +974,33 @@ html[dir="rtl"] input[type="number"] {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
   }
+}
+
+/* Authentication Pages - Fixed-width, Clean Full-Viewport Layout (No unnecessary scrollbars) */
+.auth-page-body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+@media (min-height: 650px) and (min-width: 768px) {
+  .auth-page-body {
+    height: 100vh;
+    overflow-y: hidden;
+    padding: 0;
+  }
+}
+
+.auth-card-wrapper {
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-card-wrapper-wide {
+  width: 100%;
+  max-width: 520px;
 }
