@@ -976,22 +976,36 @@ html[dir="rtl"] input[type="number"] {
   }
 }
 
-/* Authentication Pages - Fixed-width, Clean Full-Viewport Layout (No unnecessary scrollbars) */
+/* Authentication Pages - Responsive Centered Layout (Never Cropped, Always Scrollable) */
 .auth-page-body {
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 1rem 0;
 }
 
-@media (min-height: 650px) and (min-width: 768px) {
-  .auth-page-body {
-    height: 100vh;
-    overflow-y: hidden;
-    padding: 0;
+.auth-page-body > .container {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .auth-utility-controls {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1.5rem !important;
+    z-index: 1050 !important;
+  }
+
+  html[dir="rtl"] .auth-utility-controls {
+    right: auto !important;
+    left: 1.5rem !important;
   }
 }
 
@@ -1004,3 +1018,17 @@ html[dir="rtl"] input[type="number"] {
   width: 100%;
   max-width: 520px;
 }
+
+/* Auth card inputs, buttons, and card padding tuned for optimal desktop & laptop viewport fit */
+.auth-card-wrapper .form-control-tailor,
+.auth-card-wrapper-wide .form-control-tailor {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.925rem;
+}
+
+.auth-card-wrapper .glass-card,
+.auth-card-wrapper-wide .glass-card {
+  padding: 1.25rem 1.5rem !important;
+}
+
+
